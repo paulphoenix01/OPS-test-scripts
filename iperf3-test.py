@@ -14,7 +14,7 @@ outputFile = args[3]
 
 # TCP default
 trafficType = ''
-if testType == 2:
+if testType == '2':
         trafficType = '-ub 10g'
 
 result = open(outputFile, 'w')
@@ -22,7 +22,8 @@ result = open(outputFile, 'w')
 for i in range(1,6):
         time = datetime.now().strftime('%H:%M:%S')
         command = 'iperf3 -c %s -i 2 -O 2 %s' %(serverIP, trafficType)
-
+	
         print >> result, 'Test #%d start at: %s' %(i,time)
-        print >> result, cmd(command, shell=True)
+        print >> result, "Command: %s" %command
+	print >> result, cmd(command, shell=True)
 
