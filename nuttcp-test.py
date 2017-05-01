@@ -21,7 +21,7 @@ result = open(outputFile, 'w')
 
 for i in range(1,6):
         time = datetime.now().strftime('%H:%M:%S')
-        command = 'nuttcp %s -i2 %s' %(trafficType, severIP)
+        command = 'nuttcp %s -i2 %s' %(trafficType, serverIP)
 	
         
 	print >> result, 'Test #%d start at: %s' %(i,time)
